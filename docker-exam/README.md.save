@@ -7,13 +7,13 @@ Todolist est une application de gestion des tâches utilisant Node.js et Postgre
 1. Créer un réseau Docker appelé `todolist`. Ce réseau devra être de type `bridge`.
 
     ```shell
-    docker network create todolist
+    Docker
     ```
 
 2. Créer un volume Docker appelé `todolist-dbdata`.
 
     ```shell
-    docker volume create todolist-dbdata
+    # FIXME: écrire la commande ici
     ```
 
 3. Créer et démarrer un conteneur de base de données. Le conteneur devra avoir les caractéristiques suivantes :
@@ -23,14 +23,13 @@ Todolist est une application de gestion des tâches utilisant Node.js et Postgre
         - `POSTGRES_DB=todolist`
         - `POSTGRES_USER=todo-user`
         - `POSTGRES_PASSWORD=todo-secret` ;
-    - Le conteneur devra stocker le contenu du répertoire todolist-dbdata``/var/lib/postgresql/data` dans un volume Docker nommé `todolist-dbdata` ; 
+    - Le conteneur devra stocker le contenu du répertoire `/var/lib/postgresql/data` dans un volume Docker nommé `todolist-dbdata` ; 
     - Il faut publier le port `5432` du conteneur sur le port `5432` de la machine ;
     - Le conteneur devra s'appeler `todolist-db` ;
     - Le conteneur devra s'exécuter en arrière-plan.
 
     ```shell
-    docker run --network todolist -e POSTGRES_DB=todolist -e POSTGRES_USER=todo-user -e POSTGRES_PASSWORD=todo-secret --volume todolist-dbdata:/var/lib/postgresql/data -p "5432:5432" --name todolist-db -d po
-stgres:17-alpine
+    # FIXME: écrire la commande ici
     ```
 
 4. Écrire un `Dockerfile` permettant de conteneuriser l'application Todolist. Ce `Dockerfile` devra exécuter les instructions suivantes pour construire l'image :
@@ -52,7 +51,7 @@ stgres:17-alpine
 6. Construire l'image à l'aide du `Dockerfile` nouvellement créé. L'image devra être taguée avec `<username>/todolist:latest` (Remplacer `<username>` par votre nom d'utilisateur Docker Hub).
 
     ```shell
-    docker build -t moustapha93210/todolist:latest .
+    # FIXME: écrire la commande ici
     ```
 
 7. Créer et démarrer un nouveau conteneur applicatif. Le conteneur devra avoir les caractéristiques suivantes :
@@ -65,7 +64,7 @@ stgres:17-alpine
     - Le conteneur devra s'exécuter en arrière-plan.
 
     ```shell
-    docker run --network todolist -e DATABASE_URL=postgresql://todo-user:todo-secret@todolist-db:5432/todolist?schema=public -p "4173:8123" --name todolist-app -d moustapha93210/todolist:latest
+    # FIXME: écrire la commande ici
     ```
 
 8. Vérifier le bon fonctionnement de l'application en écrivant ci-dessous le code secret affiché sur le site.
@@ -79,37 +78,37 @@ stgres:17-alpine
     Arrêtez le conteneur `todolist-app`.
 
     ```shell
-    docker stop todolist-app
+    # FIXME: écrire la commande ici
     ```
 
 10. Arrêtez le conteneur `todolist-db`.
 
     ```shell
-    docker stop todolist-db
+    # FIXME: écrire la commande ici
     ```
 
 11. Supprimez tous les conteneurs non utilisés sur votre machine.
 
     ```shell
-    docker container prune
+    # FIXME: écrire la commande ici
     ```
 
 12. Supprimez le volume `todolist-dbdata`.
 
     ```shell
-    docker volume rm todolist-dbdata
+    # FIXME: écrire la commande ici
     ```
 
 13. Supprimez le réseau `todolist`.
 
     ```shell
-    docker network rm todolist
+    # FIXME: écrire la commande ici
     ```
 
 14. ⭐ **Bonus :** Pousser tous les tags de votre image sur votre repository Docker Hub.
 
     ```shell
-    
+    # FIXME: écrire la commande ici
     ```
 
 Bon courage !
